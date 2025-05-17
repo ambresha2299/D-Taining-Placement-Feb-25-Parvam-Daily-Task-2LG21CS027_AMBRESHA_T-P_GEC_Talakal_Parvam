@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin - Product List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6 font-sans">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold text-purple-800 mb-6">All Products</h1>
+
+    <div class="overflow-x-auto bg-white shadow-md rounded-lg">
+      <table class="min-w-full border border-gray-200 text-left">
+        <thead class="bg-purple-700 text-white">
+          <tr>
+            <th class="px-4 py-3">ID</th>
+            <th class="px-4 py-3">Name</th>
+            <th class="px-4 py-3">Description</th>
+            <th class="px-4 py-3">Category</th>
+            <th class="px-4 py-3">Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="product : ${products}" class="border-t hover:bg-gray-50">
+            <td class="px-4 py-2" th:text="${product.id}">1</td>
+            <td class="px-4 py-2" th:text="${product.productName}">Sample Name</td>
+            <td class="px-4 py-2" th:text="${product.description}">Sample Desc</td>
+            <td class="px-4 py-2" th:text="${product.category}">Toys</td>
+            <td class="px-4 py-2">
+              <img th:src="${product.imageUrl}" alt="Product" class="w-16 h-16 object-cover rounded" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

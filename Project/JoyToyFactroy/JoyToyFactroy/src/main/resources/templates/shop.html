@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoyToy Factory – Shop</title>
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/pe-icon-7-stroke.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+    <!-- Header -->
+    <!-- Include your existing header section here -->
+
+    <!-- Main Content -->
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <aside>
+                    <h4 class="mb-4">Search</h4>
+                    <div class="input-group mb-4">
+                        <input type="text" class="form-control" placeholder="Search Our Store">
+                        <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                    </div>
+
+                    <h4 class="mb-3">Ages</h4>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item"><a href="shop_5.html">Age 1-2</a></li>
+                        <li class="list-group-item"><a href="shop_6.html">Age 3-5</a></li>
+                        <li class="list-group-item"><a href="shop_7.html">Age 6-8</a></li>
+                        <li class="list-group-item"><a href="shop_8.html">Age 9-10</a></li>
+                    </ul>
+
+                    <h4 class="mb-3">Category</h4>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item"><a href="shop_1.html">Wooden Products</a></li>
+                        <li class="list-group-item"><a href="shop_2.html">Plastic Products</a></li>
+                        <li class="list-group-item"><a href="shop_3.html">Educational Toys</a></li>
+                        <li class="list-group-item"><a href="shop_4.html">Soft Toys</a></li>
+                    </ul>
+
+                    <h4 class="mb-3">Tags</h4>
+                    <div>
+                        <span class="badge bg-secondary me-1">Doll</span>
+                        <span class="badge bg-secondary me-1">Games</span>
+                        <span class="badge bg-secondary me-1">Kids</span>
+                        <span class="badge bg-secondary me-1">Toys</span>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Products Section -->
+            <div class="col-lg-9">
+                <h2 class="text-center text-primary mb-4">Explore Our Toys</h2>
+                <div class="row">
+                    <div th:each="product : ${products}" class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img th:src="@{${product.imageUrl}}" alt="Toy Image" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${product.productName}">Toy Name</h5>
+                                <p class="card-text text-muted" th:text="${product.description}">Toy Description</p>
+                                <p class="text-sm text-secondary" th:text="'Category: ' + ${product.category}">Category</p>
+                                <a href="/joytoyfactory/contact" class="btn btn-primary w-100 mt-2">Get Enquiry</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav class="d-flex justify-content-center mt-4">
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link">&laquo;</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link">&raquo;</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- Include your existing footer section here -->
+
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+</body>
+</html>

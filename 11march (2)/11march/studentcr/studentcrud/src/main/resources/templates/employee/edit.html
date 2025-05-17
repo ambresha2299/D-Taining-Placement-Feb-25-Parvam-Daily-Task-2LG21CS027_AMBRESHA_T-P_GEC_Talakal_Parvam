@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="w-50">
+            <h1 class="mt-5 text-center">Edit Employee</h1>
+            <form th:action="@{/ambi/update/{id}(id=${employee.id})}" th:object="${employee}" method="post" class="mt-3">
+                <input type="hidden" th:field="*{id}">
+                <div class="form-group">
+                    <label for="employeeName">Name</label>
+                    <input type="text" class="form-control" id="employeeName" th:field="*{name}" placeholder="Enter  employee name">
+                </div>
+                <div class="form-group">
+                    <label for="employeeEmail">Email</label>
+                    <input type="email" class="form-control" id="employeeEmail" th:field="*{email}" placeholder="Enter  employee email">
+                </div>
+                <div class="form-group">
+                    <label for="employeeAge">Phone</label>
+                    <input type="number" class="form-control" id="employeePhone" th:field="*{phone}" placeholder="Enter employee Phone">
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" class="form-control" id="studentDob" th:field="*{dob}" placeholder="Enter student Dob">
+                </div>
+                <div class="form-group">
+                    <label for="employeeAdress">Adress</label>
+                    <input type="text" class="form-control" id="employeeAdress" th:field="*{adress}" placeholder="Enter employee Adress">
+                </div>
+                <div class="form-check">
+                    <label for="employeetAge">Gender</label><br>
+                    <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="male" th:field="*{gender}">
+                    <label class="form-check-label" for="gridRadios1">
+                    Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="female" th:field="*{gender}">
+                    <label class="form-check-label" for="gridRadios2">
+                    Female
+                    </label>
+                </div>
+                <div class="form-group">
+                        <label for="qualification">Qualification:</label><br>
+                        <input type="checkbox" id="SSLC" th:field="*{qualification}" name="qualification" value="SSLC">
+                        <label for="qualification1">SSLC</label><br>
+                        <input type="checkbox" id="PUC" th:field="*{qualification}" name="qualification" value="PUC">
+                        <label for="qualification2">PUC</label><br>
+                        <input type="checkbox" id="DEGREE" th:field="*{qualification}" name="qualification" value="DEGREE">
+                        <label for="qualification3">DEGREE</label><br>
+                        <input type="checkbox" id="ENGINEERING" th:field="*{qualification}" name="qualification" value="ENGINEERING">
+                        <label for="qualification3">ENGINEERING</label><br><br>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

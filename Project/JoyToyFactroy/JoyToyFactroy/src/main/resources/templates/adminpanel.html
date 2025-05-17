@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Area - New Job</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+    body {
+      font-family: 'Roboto Slab', serif;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen flex">
+  <!-- Sidebar -->
+  <aside class="bg-purple-700 w-56 min-h-screen flex flex-col text-white select-none">
+    <div class="px-6 py-4 text-xs italic font-semibold tracking-wide"></div>
+    <nav class="flex flex-col space-y-2 px-4">
+      <a href="#" class="flex items-center space-x-3 py-3 px-3 rounded hover:bg-purple-600 cursor-pointer">
+        <i class="fas fa-user-circle text-lg"></i>
+        <span class="text-sm font-normal">Dashboard</span>
+      </a>
+      <a href="addproduct.html" class="flex items-center space-x-3 py-3 px-3 rounded bg-purple-900 cursor-pointer">
+        <i class="fas fa-plus-square text-lg"></i>
+        <span class="text-sm font-normal">Add product</span>
+      </a>
+      <a href="order.html" class="flex items-center space-x-3 py-3 px-3 rounded hover:bg-purple-600 cursor-pointer">
+        <i class="fas fa-file-alt text-sm"></i>
+        <span class="text-sm font-normal">Order List</span>
+      </a>
+      <a href="enquirylist.html" class="flex items-center space-x-3 py-3 px-3 rounded hover:bg-purple-600 cursor-pointer">
+        <i class="fas fa-file-signature text-sm"></i>
+        <span class="text-sm font-normal">Enquiry List</span>
+      </a>
+      
+    </nav>
+  </aside>
+
+  <main class="flex-1 p-8 overflow-auto bg-gray-50">
+    <h1 class="text-2xl font-bold text-purple-800 mb-6">Admin Dashboard </h1>
+
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+      <div class="bg-white rounded shadow p-4">
+        <div class="flex items-center space-x-4">
+          <div class="bg-purple-100 text-purple-600 p-3 rounded-full">
+            <i class="fas fa-cubes"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Total Products</p>
+            <p class="text-xl font-bold text-gray-800">145</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded shadow p-4">
+        <div class="flex items-center space-x-4">
+          <div class="bg-green-100 text-green-600 p-3 rounded-full">
+            <i class="fas fa-truck"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Orders</p>
+            <p class="text-xl font-bold text-gray-800">73</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded shadow p-4">
+        <div class="flex items-center space-x-4">
+          <div class="bg-yellow-100 text-yellow-600 p-3 rounded-full">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Enquiries</p>
+            <p class="text-xl font-bold text-gray-800">12</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded shadow p-4">
+        <div class="flex items-center space-x-4">
+          <div class="bg-red-100 text-red-600 p-3 rounded-full">
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Low Stock Alerts</p>
+            <p class="text-xl font-bold text-gray-800">5</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Orders Table (Example Placeholder) -->
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg font-semibold text-gray-700 mb-4">Recent B2B Orders</h2>
+      <table class="w-full text-sm text-left text-gray-600">
+        <thead class="border-b font-semibold text-gray-700">
+          <tr>
+            <th class="py-2 px-4">Order ID</th>
+            <th class="py-2 px-4">Company</th>
+            <th class="py-2 px-4">Total (₹)</th>
+            <th class="py-2 px-4">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b hover:bg-gray-50">
+            <td class="py-2 px-4">ORD1234</td>
+            <td class="py-2 px-4">KidzWorld Inc.</td>
+            <td class="py-2 px-4">₹18,000</td>
+            <td class="py-2 px-4"><span class="text-green-600 font-medium">Delivered</span></td>
+          </tr>
+          <tr class="border-b hover:bg-gray-50">
+            <td class="py-2 px-4">ORD1235</td>
+            <td class="py-2 px-4">Bright Toys Co.</td>
+            <td class="py-2 px-4">₹12,400</td>
+            <td class="py-2 px-4"><span class="text-yellow-600 font-medium">Processing</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
